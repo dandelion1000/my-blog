@@ -138,3 +138,12 @@ gitlab是别名 ， 使用
 git remote set-url origin git@git.dev.tencent.com:huangzj08/wdy-resource-crm.git
 ```
 
+解决关于Git无法提交 index.lock File exists的问题
+今天提交代码时，在一次提交，莫名其妙没成功后，再次用git commit -a命令时，出现以下错误，
+fatal: Unable to create 'XXXXXX/.git/index.lock': File exists.
+
+if no other git process is currently running, this probably means a
+git process crashed in this repository earlier. Make sure no other git
+process is running and remove the file manually to continue.
+解决办法:
+删除.git文件下的index.lock 即可

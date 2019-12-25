@@ -9,8 +9,10 @@ cd #回车，回到家目录
 vi file  #file指文件名，vi file 以编辑方式打开文件，按下a键开始编辑，按下esc键,:键，wq键即可保存文件，q!表示不保存强制退出，
 pwd  #查看当前工作区
 mkdir test #创建文件夹
-touch text.txt    #创建文件
-cat  //testword.html #查看文件
+touch test.txt    #创建文件
+cat  //test.html #一次性显示文件的所有内容,一般查看内容比较少的文件
+more #指定显示多少行（不指定时，默认显示一屏），按Space键或者按 f 键：显示文本的下一屏内容。按Enier键：只显示文本的下一行内容。按b键：显示上一屏内容。按q键：退出显示内容操作
+less #与more命令很相似，但是用法比较单调，一次性显示一屏，然后使用和more一样的快捷键
 ll  #查看该目录下所有文件详情包括权限
 ls   #查看所有文件目录
 ls -a #显示所有文件,包括隐藏文件和目录
@@ -19,8 +21,6 @@ date #查看当前系统的时间
 cal 月 年 #显示指定年份和月份的日历，如cal 1 2020 会出现2020年一月份的日历
 #单独指定年，这时输出全年的日历
 ```
-
-[![图片](https://dn-coding-net-production-pp.codehub.cn/b6a4359b-1a56-4e2c-8ad1-d5c9280ba24a.png?imageView2/2/w/560/ignore-error/1)](https://dn-coding-net-production-pp.codehub.cn/b6a4359b-1a56-4e2c-8ad1-d5c9280ba24a.png)
 
 ```javascript
 rm -rf  files    //删除文件或文件夹
@@ -43,10 +43,10 @@ mv text test   #将文件夹text 改成 test
 mv text.txt   test/    #将文件text.txt移到test目录下
 ```
 
-[![图片](https://dn-coding-net-production-pp.codehub.cn/5f5a6534-e4a0-49f8-a820-eafda276bb72.png?imageView2/2/w/560/ignore-error/1)](https://dn-coding-net-production-pp.codehub.cn/5f5a6534-e4a0-49f8-a820-eafda276bb72.png)
-
+```shell
 clear 清空当前item终端界面
 ctrl+r 搜索历史命令
+```
 
 ```shell
 tar czvf my.tar  #text将文件打包成my.tar 
