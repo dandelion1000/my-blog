@@ -18,7 +18,7 @@
 
 更多的利用缓存资源，可以节约带宽，降低服务器代价，提高网站的性能和响应速度。
 
-####2..HTTP 标头中用于缓存的常用的指令
+#### 2..HTTP 标头中用于缓存的常用的指令
 
 好在每个浏览器都自带了HTTP缓存实现功能，我们只需确保每个服务器响应都提供正确的 HTTP 标头指令，以指示浏览器何时可以缓存响应以及可以缓存多久。
 
@@ -46,7 +46,7 @@ If-Modified-Since : Fri , 02 May 2019 18:53:33 GMT
 
 [`Last-Modified`](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Last-Modified) 响应头可以作为一种弱校验器。说它弱是因它只能精确到一秒。由于精确度比ETag低，所以这是一个备用机制。最常见的应用场景是来更新没有特定 [`ETag`](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/ETag) 标签的缓存实体。
 
-#####ETag（验证令牌，实现**高效的资源更新检测**）
+##### ETag（验证令牌，实现**高效的资源更新检测**）
 
 ``问题场景``：假定在首次提取资源120秒之后，浏览器再次请求该资源。首先，浏览器会检测本地缓存并找到之前的响应。但该响应已经过期，浏览器无法使用，此时浏览器可直接发出新的请求并获取新的完整响应，但如果资源未发生变化，下载与缓存中已有的完全相同资源是低效且不合理的。
 
@@ -60,7 +60,7 @@ ETag旨在解决该问题。服务器生成并返回的随机令牌（指纹）�
 
 ![图片](https://coding-net-production-pp-ci.codehub.cn/b56ddd5b-072b-4c4e-897f-59b0f5b7cef2.png)
 
-#####expires
+##### expires
 
 ```
 Expires: Fri, 30 Oct 2019 14:19:41 GMT
@@ -72,7 +72,7 @@ Expires: Fri, 30 Oct 2019 14:19:41 GMT
 
 由于是绝对时间，用户可能会将客户端本地的时间进行修改，而导致浏览器判断缓存失效，重新请求该资源。此外，即使不考虑自行修改，时差或者误差等因素也可能造成客户端与服务端的时间不一致，致使缓存失效。我们可以使用cache-control中的max-age来代替。
 
-#####Cache-Control（缓存控制）
+##### Cache-Control（缓存控制）
 
 如果Cache-Control与expires同时存在，Cache-Control生效.
 
@@ -129,7 +129,7 @@ cache_docs解释：tells caches that they must obey any freshness information yo
 
 例如：Cache-Control: max-age=3600, must-revalidate
 
-####3.如何定义最佳的cache-control策略？
+#### 3.如何定义最佳的cache-control策略？
 
 ![图片](https://coding-net-production-pp-ci.codehub.cn/2483608c-8ae5-48db-b496-fcf828d2831e.png)
 
